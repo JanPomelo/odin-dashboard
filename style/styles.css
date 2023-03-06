@@ -8,10 +8,9 @@ body {
 }
 .container {
     display: grid;
-    grid-template-rows: 1fr 1fr 6fr;
+    grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr;
     width: 100%;
-    height: 200%;
     overflow: scroll;
 }
 
@@ -150,13 +149,52 @@ button:hover, button:focus {
     display: grid;
     grid-template-columns: 1fr;
     padding: 10px 15px;
+    column-gap: 20px;
 }
 
 .mainContent, input {
     background-color: rgba(226,232,240,255);
 }
 
-.whiteBg {
+#projects > div {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 12px;
+}
+
+.oneProject {
+    border-left: solid orange 1rem;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    min-height: 180px;
+}
+.projectText > p {
+    margin: 2px;
+}
+.symbols {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 15px;
+    align-self: end;
+}
+
+.symbols > img {
+    height: 25px;
+}
+
+#shareImg {
+    grid-column: 4/5;
+}
+#eyeImg {
+    grid-column: 3/4;
+}
+#starImg {
+    grid-column: 2/3;
+}
+
+.whiteBg, .oneProject {
     background-color: white;
     border-radius: 1rem;
     padding: 10px 10px;
@@ -244,14 +282,20 @@ h5 {
         grid-column: 2/-1;
     }
 
-    #mainContent {
+    .mainContent {
         grid-template-columns: 4fr 1fr;
-        grid-template-rows: 50% 50%;
+        grid-template-rows: 1fr 1fr;
+        row-gap: 20px;
     }
 
     #projects {
         grid-column: 1/2;
         grid-row: 1/-1;
+        height: 100%;
+        
+    }
+    #projects > div {
+        grid-template-columns: 1fr 1fr;
     }
 
     #announcements {
